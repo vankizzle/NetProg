@@ -1,0 +1,23 @@
+Sending 'GET' request to URL : http://localhost:8083/jersey-rest-homework/game/startgame
+Response Code : 200
+MNpAchvYFBquYipGDCjWzg==
+Took 551 ns 
+Code: 200
+
+Sending 'GET' request to URL : http://localhost:8083/jersey-rest-homework/game/startgame
+Response Code : 200
+49xlwK0tVj-JzpTJprNLFQ==
+Took 925 ns 
+Code: 200
+
+Sending 'GET' request to URL : http://localhost:8083/jersey-rest-homework/game/startgame
+Response Code : 200
+nGnxfYatSV0cWhFkmNAXNw==
+Took 621 ns 
+Code: 200
+
+Sending 'GET' request to URL : http://localhost:8083/jersey-rest-homework/game/startgame
+Response Code : 200
+1zvsLCkaBAJFxR6oirr7oQ==
+Took 559 ns 
+Code: 200

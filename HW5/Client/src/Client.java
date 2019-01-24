@@ -10,9 +10,9 @@ import java.util.Random;
 import org.json.JSONObject;
 
 public class Client {
-	private static String Url = "http://localhost:8084/jersey-rest-homework/game";
+	private static String Url = "http://localhost:8083/jersey-rest-homework/game";
 	private static int Len_;
-	private String OtherHash_;
+	private static String OtherHash_;
 	private static String hash_;
 	private static String input_;
 	
@@ -46,7 +46,7 @@ public class Client {
 		URL url = new URL(Url + "/sendinput");
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 		con.setRequestMethod("POST");
-		String urlParameters = "hash=" + hash_ + "&input=" + input_;
+		String urlParameters = "hash=" + hash + "&input=" + input;
 		con.setDoInput(true);
 		con.setDoOutput(true);
 		DataOutputStream wr = new DataOutputStream(con.getOutputStream());
@@ -86,7 +86,8 @@ public class Client {
 
 		Len_ = myJson.getInt("LENGTH");
 
-		hash_ = myJson.getString("HASH");
+		OtherHash_ = myJson.getString("HASH");
+		System.out.println(OtherHash_);
 	}
 	
 	
