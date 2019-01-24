@@ -3,6 +3,7 @@ package org.elsys.netprog.rest;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -13,6 +14,7 @@ public class Game {
 	private byte[] mybytearray_;
 	private int arraylen_;
 	private String Hash_;
+	
 	public Game(int len) {
 		this.arraylen_ = len;
 		this.mybytearray_ = new byte[arraylen_];
@@ -34,9 +36,7 @@ public class Game {
 			
 			byte[] digest = md.digest();
 			
-			this.Hash_ = DatatypeConverter
-				    .printHexBinary(digest)
-				    .toUpperCase();
+			this.Hash_ = Base64.getUrlEncoder().encodeToString(digest);	
 			
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
@@ -44,8 +44,8 @@ public class Game {
 		}
 	}
 	
-	public int Compare(byte[] a) {
-		if (Arrays.equals(a, mybytearray_)) {
+	public int Compare(String arrayInput,String HashString) {
+		if (Base64.getUrlEncoder().encodeToString(mybytearray_).equals(arrayInput) && Hash_.equals(HashString)){
 			return 1;	
 		}else return 0;
 	}
